@@ -3,7 +3,7 @@
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit">
         <div class="form-group">
           <label for="name">Username</label>
-          <input type="text" class="form-control" id="username" required [(ngModel)]="user.username" name="username" #username="ngModel" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+          <input type="text" class="form-control" id="lusername" required [(ngModel)]="user.lusername" name="lusername" #lusername="ngModel" [ngClass]="{ 'is-invalid': submitted && f.lusername.errors }">
           <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
             <div *ngIf="f.username.errors.required">Username is required</div>
         </div>
@@ -11,9 +11,9 @@
     
         <div class="form-group">
           <label for="alterEgo">Password</label>
-          <input type="text" class="form-control" id="password" required [(ngModel)]="user.password" name="password" #password="ngModel" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
-          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-            <div *ngIf="f.password.errors.required">Password is required</div>
+          <input type="text" class="form-control" id="lpassword" required [(ngModel)]="user.lpassword" name="lpassword" #lpassword="ngModel" [ngClass]="{ 'is-invalid': submitted && f.lpassword.errors }">
+          <div *ngIf="submitted && f.lpassword.errors" class="invalid-feedback">
+            <div *ngIf="f.lpassword.errors.required">Password is required</div>
         </div>
         </div>
     

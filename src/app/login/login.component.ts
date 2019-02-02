@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 
 import { AuthenticationService } from '../authentication.service'
+import { UserService } from '../user.service'
 
 @Component({
   selector: 'app-login',
@@ -31,8 +32,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+      lusername: ['', Validators.required],
+      lpassword: ['', Validators.required]
   });
 
   // get return url from route parameters or default to '/'
@@ -50,7 +51,7 @@ export class LoginComponent implements OnInit {
     }
 
     this.loading = true;
-    this.authenticationService.login(this.f.username.value, this.f.password.value)
+    this.authenticationService.login(this.f.lusername.value, this.f.lpassword.value)
         .pipe(first())
         .subscribe(
             data => {
