@@ -55,3 +55,17 @@ exports.delete = (req, res) => {
 			res.status(500).json({msg: "error", details: err});
 		});
 };
+
+exports.login = (req,res) => {
+	const username = req.params.username;
+	const password = req.params.password;
+	User.findById(req.params.username).then(User => {
+		//need to implement real jwt tokens
+		User.token = "fake-jwt-token";
+		res.json(User);
+	}).catch(err => {
+			console.log(err);
+			res.status(500).json({msg: "error", details: err});
+		});
+
+}

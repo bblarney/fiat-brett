@@ -3,6 +3,9 @@ module.exports = function(app) {
  
     // Create a new user
     app.post('/user/register', user.create);
+
+    //login existing user
+    app.post('/user/login', user.login);
  
     // Retrieve a single user by username
     app.get('/user/:username', user.findById);

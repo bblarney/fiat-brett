@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../user.service';
+import { disableDebugTools } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-registration',
@@ -36,6 +37,4 @@ export class RegistrationComponent {
     this.UserService.addUser(this.user)
         .subscribe();
   }
-
-
 }
