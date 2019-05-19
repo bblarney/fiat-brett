@@ -1,0 +1,34 @@
+<!-- Sidebar -->
+<div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
+  <ul class="list-group sidebar sticky-top sticky-offset" *ngIf="sidebar.visible">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/dashboard">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span> Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/portfolio">
+          <i class="fas fa-fw fa-table"></i>
+          <span> Portfolio Overview</span></a>
+      </li>
+
+      <div id="subPages">
+        <ul class="nav-item">
+          <li style="color: rgba(255, 255, 255, 0.5)">My Portfolios</li>
+          <li *ngFor="let portfolio of portfolios"><a [routerLink]="['/portfolio/', portfolio.portfolioId]" class="nav-link">{{portfolio.portfolioName}}</a></li> 
+        </ul>
+
+        <ul class="nav-item">
+          <li style="color: rgba(255, 255, 255, 0.5)">My Watchlists</li>
+          <li *ngFor="let watchlist of watchlists"><a [routerLink]="['/portfolio/', watchlist.portfolioId]" class="nav-link">{{watchlist.portfolioName}}</a></li>
+        </ul>
+      </div>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/advisors">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span> Advisors</span></a>
+      </li>
+    </ul>
+</div>
